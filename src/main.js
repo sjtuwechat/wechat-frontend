@@ -48,6 +48,9 @@ export default {
         iconPath: 'static/images/hardware.png',
         selectedIconPath: 'static/images/hardware-blue.png'
       }]
+    },
+    networkTimeout:{
+      "uploadFile": 20000
     }
   }
 }
