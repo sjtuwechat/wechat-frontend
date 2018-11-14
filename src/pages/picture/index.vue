@@ -102,7 +102,7 @@
             var tempFilePaths = res.tempFilePath
             console.log(tempFilePaths)
             const uploadTask = wx.uploadFile({
-              url: 'http://192.168.19.164:3000/file/upload?',
+              url: 'http://127.0.0.1:8080/file/upload?',
               filePath: tempFilePaths,
               header: {
                 'content-type': 'multipart/form-data'
@@ -143,7 +143,7 @@
       bindDownloadFile: function () {
         let that = this
         wx.request({
-          url: 'http://192.168.19.164:3000/file/download',
+          url: 'http://127.0.0.1:8080/file/download',
           success: function (res) {
             if (res.data.fileList && res.data.fileList.length > 0) {
               console.log(res.data)
@@ -162,7 +162,7 @@
       },
       downFile: function (name) {
         wx.downloadFile({
-          url: 'http://192.168.19.164:3000/' + name,
+          url: 'http://127.0.0.1:8080/' + name,
           success (res) {
             console.log(res.tempFilePath)
           },
@@ -200,7 +200,7 @@
             var tempFilePaths = res.tempFilePaths
             console.log(tempFilePaths[0])
             const uploadTask = wx.uploadFile({
-              url: 'http://192.168.19.164:3000/file/upload?',
+              url: 'http://127.0.0.1:8080/file/upload?',
               filePath: tempFilePaths[0],
               header: {
                 'content-type': 'multipart/form-data'
@@ -216,7 +216,7 @@
                 wx.showToast({
                   title: '上传成功'
                 })
-                
+
               },
               fail: function (res) {
                 console.log(res)

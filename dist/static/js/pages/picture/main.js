@@ -173,7 +173,7 @@ if (false) {(function () {
           var tempFilePaths = res.tempFilePath;
           console.log(tempFilePaths);
           var uploadTask = wx.uploadFile({
-            url: 'http://192.168.19.164:3000/file/upload?',
+            url: 'http://127.0.0.1:8080/file/upload?',
             filePath: tempFilePaths,
             header: {
               'content-type': 'multipart/form-data'
@@ -186,9 +186,16 @@ if (false) {(function () {
               var data = res.data;
               console.log(data);
               wx.hideLoading();
+              wx.showToast({
+                title: '上传成功'
+              });
             },
             fail: function fail(res) {
               console.log(res);
+              wx.hideLoading(), wx.showModal({
+                title: '上传失败',
+                content: '连接服务器失败'
+              });
             }
           });
           uploadTask.onProgressUpdate(function (res) {
@@ -206,7 +213,7 @@ if (false) {(function () {
     bindDownloadFile: function bindDownloadFile() {
       var that = this;
       wx.request({
-        url: 'http://192.168.19.164:3000/file/download',
+        url: 'http://127.0.0.1:8080/file/download',
         success: function success(res) {
           if (res.data.fileList && res.data.fileList.length > 0) {
             console.log(res.data);
@@ -225,7 +232,7 @@ if (false) {(function () {
     },
     downFile: function downFile(name) {
       wx.downloadFile({
-        url: 'http://192.168.19.164:3000/' + name,
+        url: 'http://127.0.0.1:8080/' + name,
         success: function success(res) {
           console.log(res.tempFilePath);
         },
@@ -264,7 +271,7 @@ if (false) {(function () {
           var tempFilePaths = res.tempFilePaths;
           console.log(tempFilePaths[0]);
           var uploadTask = wx.uploadFile({
-            url: 'http://192.168.19.164:3000/file/upload?',
+            url: 'http://127.0.0.1:8080/file/upload?',
             filePath: tempFilePaths[0],
             header: {
               'content-type': 'multipart/form-data'
@@ -277,9 +284,16 @@ if (false) {(function () {
               var data = res.data;
               console.log(data);
               wx.hideLoading();
+              wx.showToast({
+                title: '上传成功'
+              });
             },
             fail: function fail(res) {
               console.log(res);
+              wx.hideLoading(), wx.showModal({
+                title: '上传失败',
+                content: '连接服务器失败'
+              });
             }
           });
           uploadTask.onProgressUpdate(function (res) {

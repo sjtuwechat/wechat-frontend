@@ -1,1 +1,1 @@
-<import src="../../components/bluetooth$4d2bfdf7" /><template is="bluetooth$4d2bfdf7" data="{{ ...$root['0'], $root }}"/>
+<import src="/pages/bluetooth/index.vue.wxml" /><template is="11127771" data="{{ ...$root['0'], $root }}"/>
