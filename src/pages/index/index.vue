@@ -183,7 +183,7 @@
               }
             })
             wx.request({
-              url: 'http://192.168.19.164:3000/secret/frontcode/create/1?',
+              url: 'http://127.0.0.1:8080/secret/frontcode/create/1?',
               data: {
                 jsCode: res.code,
                 appId: that.appId
@@ -257,7 +257,7 @@
                     that.queryRdSession()
                   } else {
                     wx.request({
-                      url: 'http://192.168.19.164:3000/secret/frontcode/sign?',
+                      url: 'http://127.0.0.1:8080/secret/frontcode/sign?',
                       data: {
                         rawData: that.userInfo.rawData,
                         signature: that.userInfo.signature,
@@ -285,7 +285,7 @@
                           })
                         } else {
                           wx.request({
-                            url: 'http://192.168.19.164:3000/secret/frontcode/scan?',
+                            url: 'http://127.0.0.1:8080/secret/frontcode/scan?',
                             data: {
                               rdSession: rdSession,
                               rawData: that.userInfo.rawData,
@@ -341,7 +341,7 @@
           that.queryRdSession()
         } else {
           wx.request({
-            url: 'http://192.168.19.164:3000/api/scan/index?',
+            url: 'http://127.0.0.1:8080/api/scan/index?',
             data: {
               rdSession: rdSession,
               time: that.timeIndex,
@@ -382,7 +382,7 @@
         let decryptedData = ''
         if (encryptedData.length > 0) {
           wx.request({
-            url: 'http://192.168.19.164:3000/api/scan/decode?',
+            url: 'http://127.0.0.1:8080/api/scan/decode?',
             data: {
               rdSession: rdSession,
               encryptedData: encryptedData,

@@ -271,7 +271,7 @@ if (false) {(function () {
             }
           });
           wx.request({
-            url: 'http://192.168.19.164:3000/secret/frontcode/create/1?',
+            url: 'http://127.0.0.1:8080/secret/frontcode/create/1?',
             data: {
               jsCode: res.code,
               appId: that.appId
@@ -345,7 +345,7 @@ if (false) {(function () {
                   that.queryRdSession();
                 } else {
                   wx.request({
-                    url: 'http://192.168.19.164:3000/secret/frontcode/sign?',
+                    url: 'http://127.0.0.1:8080/secret/frontcode/sign?',
                     data: {
                       rawData: that.userInfo.rawData,
                       signature: that.userInfo.signature,
@@ -373,7 +373,7 @@ if (false) {(function () {
                         });
                       } else {
                         wx.request({
-                          url: 'http://192.168.19.164:3000/secret/frontcode/scan?',
+                          url: 'http://127.0.0.1:8080/secret/frontcode/scan?',
                           data: {
                             rdSession: rdSession,
                             rawData: that.userInfo.rawData,
@@ -429,7 +429,7 @@ if (false) {(function () {
         that.queryRdSession();
       } else {
         wx.request({
-          url: 'http://192.168.19.164:3000/api/scan/index?',
+          url: 'http://127.0.0.1:8080/api/scan/index?',
           data: {
             rdSession: rdSession,
             time: that.timeIndex,
@@ -470,7 +470,7 @@ if (false) {(function () {
       var decryptedData = '';
       if (encryptedData.length > 0) {
         wx.request({
-          url: 'http://192.168.19.164:3000/api/scan/decode?',
+          url: 'http://127.0.0.1:8080/api/scan/decode?',
           data: {
             rdSession: rdSession,
             encryptedData: encryptedData,
@@ -522,7 +522,7 @@ if (false) {(function () {
 /***/ 31:
 /***/ (function(module, exports) {
 
-module.exports = {"description":"项目配置文件。","setting":{"urlCheck":false,"es6":false,"postcss":true,"minified":true,"newFeature":true},"miniprogramRoot":"./dist/","compileType":"miniprogram","appid":"wx6e1ee86184594b21","projectname":"wechat-frontend","condition":{"search":{"current":-1,"list":[]},"conversation":{"current":-1,"list":[]},"game":{"currentL":-1,"list":[]},"miniprogram":{"current":-1,"list":[]}}}
+module.exports = {"description":"项目配置文件。","setting":{"urlCheck":false,"es6":false,"postcss":true,"minified":true,"newFeature":true},"miniprogramRoot":"./dist/","compileType":"miniprogram","appid":"wx6e1ee86184594b21","projectname":"test","condition":{"search":{"current":-1,"list":[]},"conversation":{"current":-1,"list":[]},"game":{"currentL":-1,"list":[]},"miniprogram":{"current":-1,"list":[]}}}
 
 /***/ }),
 
